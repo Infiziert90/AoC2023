@@ -34,11 +34,9 @@ public class Solution
                 lineEdited = lineEdited.Insert(pos + iteration, num);
 
             var numbers = new string(lineEdited.Where(char.IsDigit).ToArray());
-            return Concat(numbers[0] - '0', numbers[^1] - '0');
+            return (numbers[0] - '0') * 10 + (numbers[^1] - '0');
         }).Sum();
     }
-
-    private static int Concat(int a, int b) => (int)(a * Math.Pow(10, (int)Math.Log10(b) + 1) + b);
 }
 
 public class Program
