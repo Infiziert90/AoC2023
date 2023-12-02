@@ -1,6 +1,8 @@
 ﻿using BenchmarkDotNet.Attributes;
 using BenchmarkDotNet.Running;
 
+namespace AoC2023.Day1;
+
 public class Solution
 {
     private readonly (string, string)[] Words = {
@@ -39,12 +41,11 @@ public class Solution
     }
 }
 
-public class Program
+public class Day1
 {
-    public static void Main()
+    public static void Run()
     {
-        var solution = new Solution();
-        Console.WriteLine(solution.Solve());
+        Console.WriteLine(new Solution().Solve());
 
         BenchmarkRunner.Run<Solution>();
     }
